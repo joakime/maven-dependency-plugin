@@ -37,7 +37,7 @@ if ( htmlFile.length() == 0 )
 
 Document doc = Jsoup.parse( htmlFile, "UTF-8");
 
-Elements entry = doc.select( "#contentBox > section > section:nth-child(5) > table > tbody > tr.b" );
+Elements entry = doc.select( "#bodyColumn > section > section:nth-child(5) > table > tbody > tr.b" );
 
 if( entry.isEmpty() )
 {
@@ -50,7 +50,7 @@ else if ( entry.size() != 1 )
 }
 
 Element groupIdElement = doc.select(
-"#contentBox > section > section:nth-child(5) > table > tbody > tr.b > td:nth-child(1)" ).first();
+"#bodyColumn > section > section:nth-child(5) > table > tbody > tr.b > td:nth-child(1)" ).first();
 
 String groupId = groupIdElement.text();
 
