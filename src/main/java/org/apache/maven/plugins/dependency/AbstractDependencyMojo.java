@@ -147,7 +147,8 @@ public abstract class AbstractDependencyMojo extends AbstractMojo {
             if (artifact.isDirectory()) {
                 // usual case is a future jar packaging, but there are special cases: classifier and other packaging
                 throw new MojoExecutionException("Artifact has not been packaged yet. When used on reactor artifact, "
-                        + "copy should be executed after packaging: see MDEP-187.");
+                        + "copy should be executed after packaging: see MDEP-187. (artifact " + artifact + " to "
+                        + destFile + ")");
             }
 
             FileUtils.copyFile(artifact, destFile);
